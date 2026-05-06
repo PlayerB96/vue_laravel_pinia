@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../**/*.vue';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Corporativo retail: #fea701 (ámbar) + #007bff (azul), tonos suaves para fondos */
+    --color-brand: #fea701;
+    --color-brand-hover: #e79802;
+    --color-brand-foreground: #422006;
+    --color-brand-subtle: #fff8f1;
+    --color-brand-muted: #ffecd4;
+    --color-brand-border: #ffd48a;
+
+    --color-accent: #007bff;
+    --color-accent-hover: #0069de;
+    --color-accent-foreground: #ffffff;
+    --color-accent-subtle: #eef6ff;
+    --color-accent-muted: #d6e9ff;
+    --color-accent-border: #a8d0ff;
+}
+
+@layer base {
+    html,
+    body,
+    #app {
+        min-height: 100%;
+    }
+
+    body {
+        @apply bg-linear-to-br from-brand-subtle via-white to-accent-subtle text-zinc-900 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-900 dark:text-zinc-100;
+    }
+}
+
+@layer components {
+    .dashboard-welcome-card {
+        @apply rounded-2xl border border-brand-border/40 bg-linear-to-br from-white via-accent-subtle/40 to-brand-muted/50 p-6 shadow-md shadow-brand/10 dark:border-accent-border/25 dark:from-zinc-900 dark:via-accent/10 dark:to-brand/10 dark:shadow-accent/5;
+    }
+}
