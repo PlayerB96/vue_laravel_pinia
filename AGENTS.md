@@ -8,6 +8,16 @@ Guía rápida para agentes que colaboran en este proyecto.
 - Objetivo funcional: sistema de caja rápida para tiendas.
 - Funcionalidad clave: consulta de precio de productos y emisión de boletas.
 
+### Versiones del stack (referencia)
+Los valores **instalados** corresponden a `package-lock.json` y `composer.lock`; los rangos en **manifest** están en `package.json` y `composer.json`.
+
+| Herramienta | Manifest | Instalado (lock) |
+|-------------|----------|------------------|
+| Node.js | Sin `engines` en la raíz; Vite 7 exige Node ^20.19.0 o ≥22.12.0 | v22.22.0 (comprobado localmente en desarrollo) |
+| Vue | ^3.5.13 | 3.5.33 |
+| Pinia | ^3.0.4 | 3.0.4 |
+| Laravel (`laravel/framework`) | ^12.0 | v12.58.0 |
+
 ## Reglas de trabajo
 - Mantener cambios enfocados y pequeños por tarea.
 - No modificar archivos no relacionados con la solicitud.
